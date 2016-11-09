@@ -13,7 +13,7 @@ final class CustomTextView: UITextView {
     
     // MARK: - placeholer
     
-    private let placeholderLabel = UILabel()
+    fileprivate let placeholderLabel = UILabel()
     
     // default is nil. string is drawn 70% gray
     @IBInspectable var placeholder: String? {
@@ -25,7 +25,7 @@ final class CustomTextView: UITextView {
     }
     
     // adjust label position
-    private let paddingLeft: CGFloat = 2
+    fileprivate let paddingLeft: CGFloat = 2
     
     
     // MARK: - initializers
@@ -51,15 +51,15 @@ final class CustomTextView: UITextView {
     
     // MARK: - private methods
     
-    private let notificatin = NotificationCenter.default
+    fileprivate let notificatin = NotificationCenter.default
     
-    private func observeTextDidChange() {
+    fileprivate func observeTextDidChange() {
         // 通知を登録する
         notificatin.addObserver(self, selector: #selector(controlPlaceholder(_:)), name: .UITextViewTextDidChange, object: nil)
     }
     
     // Placeholerの初期化設定(1回のみ)
-    private func configurePlaceholder() {
+    fileprivate func configurePlaceholder() {
         // default is clear
         //        placeholderLabel.backgroundColor = UIColor.clear
         placeholderLabel.backgroundColor = UIColor.blue.withAlphaComponent(0.5)
@@ -79,17 +79,17 @@ final class CustomTextView: UITextView {
     }
     
     //  TextViewのTextが変更された時に呼ばれる
-    @objc private func controlPlaceholder(_ notification: NSNotification) {
+    @objc fileprivate func controlPlaceholder(_ notification: Notification) {
         //        print("Notification->UITextViewTextDidChange!")
         placeholderIsHidden()
     }
     
-    private func placeholderIsHidden() {
+    fileprivate func placeholderIsHidden() {
         placeholderLabel.isHidden = !text.isEmpty
     }
     
     // text領域が変更された時に調整を行う
-    private func adjustLabelToFit() {
+    fileprivate func adjustLabelToFit() {
         placeholderLabel.frame.size.width = textContainer.size.width - paddingLeft * 2
         placeholderLabel.sizeToFit()
     }
@@ -127,9 +127,9 @@ final class CustomTextView: UITextView {
     
     // MARK: - accessoryView
     
-    private let accessoryView = UIToolbar()
+    fileprivate let accessoryView = UIToolbar()
     
-    private var doneButton = UIBarButtonItem(title: "", style: .plain, target: nil, action: #selector(doneButtonDidPush(_:)))
+    fileprivate var doneButton = UIBarButtonItem(title: "", style: .plain, target: nil, action: #selector(doneButtonDidPush(_:)))
     
     @IBInspectable var barItemTitle: String = "Done" {
         didSet {
@@ -164,7 +164,7 @@ final class CustomTextView: UITextView {
         }
     }
     
-    private func configureAccessoryView() {
+    fileprivate func configureAccessoryView() {
         doneButton.title = barItemTitle
         let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         accessoryView.setItems([spacer, doneButton], animated: false)
@@ -185,7 +185,7 @@ final class CustomTextView: UITextView {
         }
     }
     
-    @objc private func doneButtonDidPush(_ sender: UIButton) {
+    @objc fileprivate func doneButtonDidPush(_ sender: UIButton) {
         if customDelegate?.customTextViewShouldDone(self) != false {
             // キーボードを閉じる
             self.resignFirstResponder()
