@@ -13,6 +13,9 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var textView: SimpleCustomizableTextView!
     
+    let rect = CGRect(x: 10, y: 20, width: 200, height: 300)
+    let textViewa = SimpleCustomizableTextView(frame: rect)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
