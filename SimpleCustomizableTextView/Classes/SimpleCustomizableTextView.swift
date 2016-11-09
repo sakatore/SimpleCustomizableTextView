@@ -8,27 +8,30 @@
 
 import UIKit
 
+// MARK: - SimpleCustomizableTextViewDelegate -
+
+public protocol SimpleCustomizableTextViewDelegate: UITextViewDelegate {
+    func SimpleCustomizableTextViewShouldDone(_ textView: SimpleCustomizableTextView) -> Bool
+}
+
+
+// MARK: - SimpleCustomizableTextView -
+
 @IBDesignable
-final class CustomTextView: UITextView {
+public class SimpleCustomizableTextView: UITextView {
     
-    // MARK: - placeholer
+    // MARK: - fileprivate properties -
     
     fileprivate let placeholderLabel = UILabel()
-    
-    // default is nil. string is drawn 70% gray
-    @IBInspectable var placeholder: String? {
-        didSet {
-            print("placeholder did set.")
-            placeholderLabel.text = placeholder
-            adjustLabelToFit()
-        }
-    }
-    
     // adjust label position
     fileprivate let paddingLeft: CGFloat = 2
     
+    fileprivate let notificatin = NotificationCenter.default
     
-    // MARK: - initializers
+    fileprivate var doneButton = UIBarButtonItem(title: "", style: .plain, target: nil, action: #selector(doneButtonDidPush(_:)))
+    
+    
+    // MARK: - Initialization -
     
     override init(frame: CGRect, textContainer: NSTextContainer? = nil) {
         super.init(frame: frame, textContainer: textContainer)
@@ -37,7 +40,7 @@ final class CustomTextView: UITextView {
         configureAccessoryView()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         observeTextDidChange()
         configurePlaceholder()
@@ -49,152 +52,162 @@ final class CustomTextView: UITextView {
     }
     
     
-    // MARK: - private methods
+    // MARK: - override properties -
     
-    fileprivate let notificatin = NotificationCenter.default
-    
-    fileprivate func observeTextDidChange() {
-        // 通知を登録する
-        notificatin.addObserver(self, selector: #selector(controlPlaceholder(_:)), name: .UITextViewTextDidChange, object: nil)
-    }
-    
-    // Placeholerの初期化設定(1回のみ)
-    fileprivate func configurePlaceholder() {
-        // default is clear
-        //        placeholderLabel.backgroundColor = UIColor.clear
-        placeholderLabel.backgroundColor = UIColor.blue.withAlphaComponent(0.5)
-        // default is 70% gray
-        placeholderLabel.textColor = UIColor.gray.withAlphaComponent(0.7)
-        // 表示可能最大行数を指定(0 -> 行数は可変)
-        placeholderLabel.numberOfLines = 0
-        // 単語の途中で改行されないようにする
-        placeholderLabel.lineBreakMode = .byWordWrapping
-        
-        // 変更され次第更新するもの
-        placeholderLabel.font = font ?? .systemFont(ofSize: 14)
-        placeholderLabel.textAlignment = textAlignment
-        placeholderLabel.frame.origin = CGPoint(x: textContainerInset.left + paddingLeft, y: textContainerInset.top)
-        
-        self.addSubview(placeholderLabel)
-    }
-    
-    //  TextViewのTextが変更された時に呼ばれる
-    @objc fileprivate func controlPlaceholder(_ notification: Notification) {
-        //        print("Notification->UITextViewTextDidChange!")
-        placeholderIsHidden()
-    }
-    
-    fileprivate func placeholderIsHidden() {
-        placeholderLabel.isHidden = !text.isEmpty
-    }
-    
-    // text領域が変更された時に調整を行う
-    fileprivate func adjustLabelToFit() {
-        placeholderLabel.frame.size.width = textContainer.size.width - paddingLeft * 2
-        placeholderLabel.sizeToFit()
-    }
-    
-    // MARK: - override properties
-    
-    override var text: String! {
+    override public var text: String! {
         didSet {
-            print("didiSet: " + text)
             placeholderIsHidden()
         }
     }
     
-    override var textAlignment: NSTextAlignment {
+    override public var textAlignment: NSTextAlignment {
         didSet {
-            print("didiSet: \(textAlignment)")
             placeholderLabel.textAlignment = textAlignment
         }
     }
     
-    override var font: UIFont? {
+    override public var font: UIFont? {
         didSet {
-            print("didiSet: \(font)")
             placeholderLabel.font = font
             adjustLabelToFit()
         }
     }
     
-    override var textContainerInset: UIEdgeInsets {
+    override public var textContainerInset: UIEdgeInsets {
         didSet {
-            print("didiSet: \(textContainerInset)")
             placeholderLabel.frame.origin = CGPoint(x: textContainerInset.left + paddingLeft, y: textContainerInset.top)
         }
     }
     
-    // MARK: - accessoryView
     
-    fileprivate let accessoryView = UIToolbar()
+    // MARK: - public properties -
     
-    fileprivate var doneButton = UIBarButtonItem(title: "", style: .plain, target: nil, action: #selector(doneButtonDidPush(_:)))
-    
-    @IBInspectable var barItemTitle: String = "Done" {
+    // default is nil. string is drawn 70% gray
+    @IBInspectable public var placeholder: String? {
         didSet {
-            doneButton.title = barItemTitle
+            placeholderLabel.text = placeholder
+            adjustLabelToFit()
         }
     }
     
-    var barItemTitleFont: UIFont = .systemFont(ofSize: UIFont.buttonFontSize) {
+    @IBInspectable public let accessoryView = UIToolbar()
+    
+    @IBInspectable public var accessoryViewIsHidden: Bool = false {
         didSet {
-            doneButton.setTitleTextAttributes([
-                NSFontAttributeName: barItemTitleFont, NSForegroundColorAttributeName: barItemTitleColor], for: .normal)
+            accessoryView.isHidden = accessoryViewIsHidden
         }
     }
     
-    @IBInspectable var barItemTitleColor: UIColor = UIColor.black {
+    @IBInspectable public var barItemTitleColor: UIColor = UIColor.black {
         didSet {
             doneButton.setTitleTextAttributes([
                 NSForegroundColorAttributeName: barItemTitleColor, NSFontAttributeName: barItemTitleFont], for: .normal)
         }
     }
     
-    var accessoryViewStyle: UIBarStyle = .default {
+    @IBInspectable public var barItemTitle: String = "Done" {
+        didSet {
+            doneButton.title = barItemTitle
+        }
+    }
+    
+    public var accessoryViewStyle: UIBarStyle = .default {
         didSet {
             accessoryView.barStyle = accessoryViewStyle
         }
     }
-    
-    // defaultではaccessoryViewを表示
-    @IBInspectable var accessoryViewIsHidden: Bool = false {
+        
+    public var barItemTitleFont: UIFont = .systemFont(ofSize: UIFont.buttonFontSize) {
         didSet {
-            accessoryView.isHidden = accessoryViewIsHidden
+            doneButton.setTitleTextAttributes([
+                NSFontAttributeName: barItemTitleFont, NSForegroundColorAttributeName: barItemTitleColor], for: .normal)
         }
     }
     
-    fileprivate func configureAccessoryView() {
+    public weak var customDelegate: SimpleCustomizableTextViewDelegate? {
+        didSet {
+            delegate = customDelegate
+        }
+    }
+    
+    
+    
+}
+
+
+// MARK: - private methods -
+
+private extension SimpleCustomizableTextView {
+    
+    // MARK: - Placeholder -
+    
+    func observeTextDidChange() {
+        notificatin.addObserver(self, selector: #selector(controlPlaceholder(_:)), name: .UITextViewTextDidChange, object: nil)
+    }
+    
+    func configurePlaceholder() {
+        placeholderLabel.backgroundColor = UIColor.clear
+        placeholderLabel.textColor = UIColor.gray.withAlphaComponent(0.7)
+        placeholderLabel.numberOfLines = 0
+        placeholderLabel.lineBreakMode = .byWordWrapping
+        
+        placeholderLabel.font = font ?? .systemFont(ofSize: 12)
+        placeholderLabel.textAlignment = textAlignment
+        placeholderLabel.frame.origin = CGPoint(x: textContainerInset.left + paddingLeft, y: textContainerInset.top)
+        
+        self.addSubview(placeholderLabel)
+    }
+    
+    func adjustLabelToFit() {
+        placeholderLabel.frame.size.width = textContainer.size.width - paddingLeft * 2
+        placeholderLabel.sizeToFit()
+    }
+    
+    @objc func controlPlaceholder(_ notification: Notification) {
+        placeholderIsHidden()
+    }
+    
+    // MARK: - AccessaryView -
+    
+    @objc func doneButtonDidPush(_ sender: UIButton) {
+        if customDelegate?.SimpleCustomizableTextViewShouldDone(self) != false {
+            self.resignFirstResponder()
+        }
+    }
+    
+    func placeholderIsHidden() {
+        placeholderLabel.isHidden = !text.isEmpty
+    }
+    
+    func configureAccessoryView() {
         doneButton.title = barItemTitle
         let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         accessoryView.setItems([spacer, doneButton], animated: false)
         
-        // ツールバーをtextViewのアクセサリViewに設定する
         self.inputAccessoryView = accessoryView
         accessoryView.sizeToFit()
         accessoryView.isHidden = accessoryViewIsHidden
         accessoryView.barStyle = accessoryViewStyle
     }
     
-    
-    // MARK: - delegate
-    
-    var customDelegate: CustomTextViewDelegate? {
-        didSet {
-            delegate = customDelegate
-        }
-    }
-    
-    @objc fileprivate func doneButtonDidPush(_ sender: UIButton) {
-        if customDelegate?.customTextViewShouldDone(self) != false {
-            // キーボードを閉じる
-            self.resignFirstResponder()
-        }
-    }
-    
 }
 
 
-protocol CustomTextViewDelegate: UITextViewDelegate {
-    func customTextViewShouldDone(_ textView: CustomTextView) -> Bool
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
