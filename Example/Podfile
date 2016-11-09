@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'SimpleCustomizableTextView_Example' do
+  pod 'SimpleCustomizableTextView', :path => '../'
+
+  target 'SimpleCustomizableTextView_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
