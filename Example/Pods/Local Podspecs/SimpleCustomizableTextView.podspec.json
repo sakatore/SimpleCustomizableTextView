@@ -1,0 +1,22 @@
+{
+  "name": "SimpleCustomizableTextView",
+  "version": "0.1.0",
+  "summary": "A short description of SimpleCustomizableTextView.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/SimpleCustomizableTextView",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Kyohei-Sakai": "nico_f00tb@yahoo.co.jp"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/SimpleCustomizableTextView.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "SimpleCustomizableTextView/Classes/**/*"
+}

@@ -1,0 +1,16 @@
+PODS:
+  - SimpleCustomizableTextView (0.1.0)
+
+DEPENDENCIES:
+  - SimpleCustomizableTextView (from `../`)
+
+EXTERNAL SOURCES:
+  SimpleCustomizableTextView:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  SimpleCustomizableTextView: e500cefc4889cc8ce38b4c2a25f04a6a3aaf3ed3
+
+PODFILE CHECKSUM: a12a5b7e37eaa93eacc986958545708a9a24cde9
+
+COCOAPODS: 1.1.1

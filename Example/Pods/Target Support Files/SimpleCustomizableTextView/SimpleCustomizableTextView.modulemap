@@ -1,0 +1,6 @@
+framework module SimpleCustomizableTextView {
+  umbrella header "SimpleCustomizableTextView-umbrella.h"
+
+  export *
+  module * { export * }
+}
