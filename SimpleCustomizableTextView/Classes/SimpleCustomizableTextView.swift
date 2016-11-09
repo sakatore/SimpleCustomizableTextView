@@ -141,8 +141,16 @@ private extension SimpleCustomizableTextView {
     
     // MARK: - Placeholder -
     
+    @objc func controlPlaceholder(_ notification: Notification) {
+        placeholderIsHidden()
+    }
+    
     func observeTextDidChange() {
         notificatin.addObserver(self, selector: #selector(controlPlaceholder(_:)), name: .UITextViewTextDidChange, object: nil)
+    }
+    
+    func placeholderIsHidden() {
+        placeholderLabel.isHidden = !text.isEmpty
     }
     
     func configurePlaceholder() {
@@ -163,9 +171,6 @@ private extension SimpleCustomizableTextView {
         placeholderLabel.sizeToFit()
     }
     
-    @objc func controlPlaceholder(_ notification: Notification) {
-        placeholderIsHidden()
-    }
     
     // MARK: - AccessaryView -
     
@@ -173,10 +178,6 @@ private extension SimpleCustomizableTextView {
         if customDelegate?.SimpleCustomizableTextViewShouldDone(self) != false {
             self.resignFirstResponder()
         }
-    }
-    
-    func placeholderIsHidden() {
-        placeholderLabel.isHidden = !text.isEmpty
     }
     
     func configureAccessoryView() {
