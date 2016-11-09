@@ -1,11 +1,15 @@
 # SimpleCustomizableTextView
 
-[![CI Status](http://img.shields.io/travis/Kyohei-Sakai/SimpleCustomizableTextView.svg?style=flat)](https://travis-ci.org/Kyohei-Sakai/SimpleCustomizableTextView)
-[![Version](https://img.shields.io/cocoapods/v/SimpleCustomizableTextView.svg?style=flat)](http://cocoapods.org/pods/SimpleCustomizableTextView)
-[![License](https://img.shields.io/cocoapods/l/SimpleCustomizableTextView.svg?style=flat)](http://cocoapods.org/pods/SimpleCustomizableTextView)
-[![Platform](https://img.shields.io/cocoapods/p/SimpleCustomizableTextView.svg?style=flat)](http://cocoapods.org/pods/SimpleCustomizableTextView)
 
-## Example
+![Platform](http://img.shields.io/badge/platform-ios-blue.svg?style=flat
+)
+[![License](https://img.shields.io/cocoapods/l/SimpleCustomizableTextView.svg?style=flat)](http://cocoapods.org/pods/SimpleCustomizableTextView)
+[![Language](http://img.shields.io/badge/language-swift 3.0-orange.svg?style=flat
+)](https://developer.apple.com/swift)
+[![License](http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat
+)](http://mit-license.org)
+
+## QuickExample
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
@@ -14,6 +18,9 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 ```swift
 let rect = CGRect(x: 10, y: 20, width: 200, height: 300)
 let textView = SimpleCustomizableTextView(frame: rect)
+
+
+
 ```
 
 `SimpleCustomizableTextView` is available in Interface Builder.
@@ -25,16 +32,11 @@ Set custom class of `UITextView ` to `SimpleCustomizableTextView`
 
 
 
-
-
-
-
-
-
-
-
-
 ## Requirements
+
+- iOS 8.0+
+- Xcode 8.0+
+- Swift 3.0+
 
 
 
