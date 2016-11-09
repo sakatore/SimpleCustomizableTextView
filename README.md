@@ -13,24 +13,56 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+```swift
+
+    @IBOutlet weak var textView: SimpleCustomizableTextView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        textView.layer.borderColor = UIColor.black.cgColor
+        textView.layer.borderWidth = 1
+        textView.keyboardAppearance = .dark
+        
+        // MARK: - Placeholder setting -
+        
+        textView.placeholder = "placeholder text"
+        textView.customDelegate = self
+        
+        // MARK: - AccessaryView setting -
+        
+        textView.accessoryViewStyle = .blackOpaque
+        textView.barItemTitle = "Close"
+        textView.barItemTitleColor = UIColor.white
+        textView.barItemTitleFont = UIFont.italicSystemFont(ofSize: 20)
+        
+        view.addSubview(textView)
+        
+    }
+```
+
+
+### Initializer in programmatically
+
 ***SimpleCustomizableTextView*** can be initialized in a way same as UITextView
 
 ```swift
-let rect = CGRect(x: 10, y: 20, width: 200, height: 300)
-let textView = SimpleCustomizableTextView(frame: rect)
-
-
-
+let textView = SimpleCustomizableTextView(frame: CGRect(x: 10, y: 20, width: 200, height: 300))
 ```
 
-`SimpleCustomizableTextView` is available in Interface Builder.
-Set custom class of `UITextView ` to `SimpleCustomizableTextView`
+### SimpleCustomizableTextViewDelegate
+
+Asks the delegate if the `SimpleCustomizableTextView` should process the pressing of the bar button.
+`true` if the `SimpleCustomizableTextView` should implement its default behavior for the bar button; otherwise, `false`.
 
 ```swift
-@IBOutlet weak var textView: SimpleCustomizableTextView!
+extension ViewController: SimpleCustomizableTextViewDelegate {
+    public func SimpleCustomizableTextViewShouldDone(_ textView: SimpleCustomizableTextView) -> Bool {
+        return true
+    }
+}
+
 ```
-
-
 
 ## Requirements
 
