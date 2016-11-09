@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		079F94297CABA1CB18F092FF8388CC2F /* Pods-SimpleCustomizableTextView_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 968BD3B002E01BA6F57740AD19263C3A /* Pods-SimpleCustomizableTextView_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0BA23D395B2ECA92520A557CE88348FA /* Pods-SimpleCustomizableTextView_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8DF139CD0D8DFBE8FF2B2C7F4A1A2DF2 /* Pods-SimpleCustomizableTextView_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1DE0FF85019226DA1E7388772042B869 /* SimpleCustomizableTextView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2E082A157109C472F56835BF4DC4F7 /* SimpleCustomizableTextView-dummy.m */; };
 		414DF0251344673D6E7A970F821B2059 /* Pods-SimpleCustomizableTextView_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2826DBB746D1223E0D53AD3D3795DBF8 /* Pods-SimpleCustomizableTextView_Tests-dummy.m */; };
-		663B3570CB226104601FD2DA238C92BB /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C793AFB5ECDCE1F437452822791DC485 /* ReplaceMe.swift */; };
+		47A756CACCEF02E33B80B62A6E48CA80 /* SimpleCustomizableTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B5C386375E327A67F54FBC4E296704 /* SimpleCustomizableTextView.swift */; };
 		6C03FDC5DED94F00F5010C22C056784F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
 		9FE7A329479842D6F4B6C2DE00C2DAEA /* Pods-SimpleCustomizableTextView_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A59AD48D8EF29D1C458A78BC606A9B9 /* Pods-SimpleCustomizableTextView_Example-dummy.m */; };
 		D3A3A1D64602F6EEE10E8C6EC466EC8C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		D6A16284537A9DAFF7A908C90588DC65 /* SimpleCustomizableTextView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2E082A157109C472F56835BF4DC4F7 /* SimpleCustomizableTextView-dummy.m */; };
 		E359EB2DFFB81D87AD99AE879F20A2DD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
 		ED7990A95E41B69502018C443B360841 /* SimpleCustomizableTextView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 70015C095232F31C588EC4AF0DE4CB6E /* SimpleCustomizableTextView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
@@ -40,6 +40,7 @@
 		2CBC4135350616316A9FE73029AE6577 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4110C7A1B5D588B9C0B547F6BED5F42E /* SimpleCustomizableTextView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SimpleCustomizableTextView.framework; path = SimpleCustomizableTextView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A59AD48D8EF29D1C458A78BC606A9B9 /* Pods-SimpleCustomizableTextView_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SimpleCustomizableTextView_Example-dummy.m"; sourceTree = "<group>"; };
+		65B5C386375E327A67F54FBC4E296704 /* SimpleCustomizableTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SimpleCustomizableTextView.swift; sourceTree = "<group>"; };
 		6E2E082A157109C472F56835BF4DC4F7 /* SimpleCustomizableTextView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SimpleCustomizableTextView-dummy.m"; sourceTree = "<group>"; };
 		70015C095232F31C588EC4AF0DE4CB6E /* SimpleCustomizableTextView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SimpleCustomizableTextView-umbrella.h"; sourceTree = "<group>"; };
 		7D5B0F2912C0E874E325A35E96ABC1B8 /* Pods-SimpleCustomizableTextView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SimpleCustomizableTextView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -58,7 +59,6 @@
 		BCEAEEBD20F4E4EDE9CE951E3CCFCA79 /* SimpleCustomizableTextView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SimpleCustomizableTextView-prefix.pch"; sourceTree = "<group>"; };
 		BF0708AE17BA4A8E59A69A7C3A9A6E35 /* Pods-SimpleCustomizableTextView_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SimpleCustomizableTextView_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		BFD40032F63B2DB86449B6CE677B16A0 /* Pods-SimpleCustomizableTextView_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SimpleCustomizableTextView_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		C793AFB5ECDCE1F437452822791DC485 /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReplaceMe.swift; sourceTree = "<group>"; };
 		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		F719C4959FAAE15D4556335BC27AB5F7 /* SimpleCustomizableTextView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SimpleCustomizableTextView.modulemap; sourceTree = "<group>"; };
 		FD8D75814A9C76B70763FFCF7FF205BC /* Pods-SimpleCustomizableTextView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SimpleCustomizableTextView_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -105,10 +105,19 @@
 		0CEE3D5F74C55F8E8D2C4EC706858A4C /* SimpleCustomizableTextView */ = {
 			isa = PBXGroup;
 			children = (
-				6AC51CEB5446A1EE284813B07714A231 /* Classes */,
+				181507EF364FD7AEB7B47BFA16EA5A2D /* Classes */,
 			);
 			name = SimpleCustomizableTextView;
 			path = SimpleCustomizableTextView;
+			sourceTree = "<group>";
+		};
+		181507EF364FD7AEB7B47BFA16EA5A2D /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				65B5C386375E327A67F54FBC4E296704 /* SimpleCustomizableTextView.swift */,
+			);
+			name = Classes;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		1A9E2F31FEF2CAA5ED96EB42BD89EB4A /* Support Files */ = {
@@ -159,15 +168,6 @@
 				0594EEE0E0267E36044F3E0D8C79DEE7 /* SimpleCustomizableTextView */,
 			);
 			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		6AC51CEB5446A1EE284813B07714A231 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				C793AFB5ECDCE1F437452822791DC485 /* ReplaceMe.swift */,
-			);
-			name = Classes;
-			path = Classes;
 			sourceTree = "<group>";
 		};
 		6E45008A6F7A9250E098DED93F293933 /* Targets Support Files */ = {
@@ -293,7 +293,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2FF25CA7A62C1FAF1F0AD43CE9ABF9BB /* Build configuration list for PBXNativeTarget "SimpleCustomizableTextView" */;
 			buildPhases = (
-				6AD4040FB7A135AB302845DC0B15634C /* Sources */,
+				FDB64ABBD62AFC2614FD60631573DCBB /* Sources */,
 				8BADC84C25862DA920E0B1F58A55BEDC /* Frameworks */,
 				E90BBDE4BE837A0D5AB3039FF74C210A /* Headers */,
 			);
@@ -335,15 +335,6 @@
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		6AD4040FB7A135AB302845DC0B15634C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				663B3570CB226104601FD2DA238C92BB /* ReplaceMe.swift in Sources */,
-				1DE0FF85019226DA1E7388772042B869 /* SimpleCustomizableTextView-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		B7E5558C98F305C873559DEA2F315CA0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -360,6 +351,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FDB64ABBD62AFC2614FD60631573DCBB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D6A16284537A9DAFF7A908C90588DC65 /* SimpleCustomizableTextView-dummy.m in Sources */,
+				47A756CACCEF02E33B80B62A6E48CA80 /* SimpleCustomizableTextView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -372,6 +372,115 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		29DBEB1A1D707170FA85C6122EF250E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A40F25A36640AFCED211803D710B55B7 /* Pods-SimpleCustomizableTextView_Example.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-SimpleCustomizableTextView_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SimpleCustomizableTextView_Example/Pods-SimpleCustomizableTextView_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_SimpleCustomizableTextView_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		322E8FAE6095169FA29A20E81F2EA1E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D5B0F2912C0E874E325A35E96ABC1B8 /* Pods-SimpleCustomizableTextView_Tests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-SimpleCustomizableTextView_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SimpleCustomizableTextView_Tests/Pods-SimpleCustomizableTextView_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_SimpleCustomizableTextView_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4769F1B39B89EDC5702E3580172D2C26 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A45B03DD3F2D7B2B1B8BA37D99CC9C98 /* Pods-SimpleCustomizableTextView_Example.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-SimpleCustomizableTextView_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SimpleCustomizableTextView_Example/Pods-SimpleCustomizableTextView_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_SimpleCustomizableTextView_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		8DED8AD26D381A6ACFF202E5217EC498 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -411,69 +520,6 @@
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
-		};
-		93A24C3486128B5180F4FD79974E9900 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1CACCBB2BE76AD6BE96E191664C92576 /* SimpleCustomizableTextView.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/SimpleCustomizableTextView/SimpleCustomizableTextView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SimpleCustomizableTextView/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SimpleCustomizableTextView/SimpleCustomizableTextView.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = SimpleCustomizableTextView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		9743FB6C4C77B5E138520BFE45AC96FD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1CACCBB2BE76AD6BE96E191664C92576 /* SimpleCustomizableTextView.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/SimpleCustomizableTextView/SimpleCustomizableTextView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SimpleCustomizableTextView/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SimpleCustomizableTextView/SimpleCustomizableTextView.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = SimpleCustomizableTextView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
 		};
 		9E1E4E48AF2EAB23169E611BF694090A /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -519,9 +565,41 @@
 			};
 			name = Debug;
 		};
-		C2A1607531CF0D08E1D60290404F171E /* Debug */ = {
+		BCF1B03B02597BC5F6B8524C6153DFE8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7D5B0F2912C0E874E325A35E96ABC1B8 /* Pods-SimpleCustomizableTextView_Tests.debug.xcconfig */;
+			baseConfigurationReference = 1CACCBB2BE76AD6BE96E191664C92576 /* SimpleCustomizableTextView.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SimpleCustomizableTextView/SimpleCustomizableTextView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SimpleCustomizableTextView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SimpleCustomizableTextView/SimpleCustomizableTextView.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = SimpleCustomizableTextView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E6318F5EB2497747A61CFFD7485B6F31 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1CACCBB2BE76AD6BE96E191664C92576 /* SimpleCustomizableTextView.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -534,27 +612,25 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-SimpleCustomizableTextView_Tests/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/SimpleCustomizableTextView/SimpleCustomizableTextView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SimpleCustomizableTextView/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SimpleCustomizableTextView_Tests/Pods-SimpleCustomizableTextView_Tests.modulemap";
+				MODULEMAP_FILE = "Target Support Files/SimpleCustomizableTextView/SimpleCustomizableTextView.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_SimpleCustomizableTextView_Tests;
+				PRODUCT_NAME = SimpleCustomizableTextView;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		DC3D1D3FCCF4B696695BB5A866C3C70E /* Release */ = {
+		EF18252474D3C29874277C59E8021BAD /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FD8D75814A9C76B70763FFCF7FF205BC /* Pods-SimpleCustomizableTextView_Tests.release.xcconfig */;
 			buildSettings = {
@@ -583,82 +659,12 @@
 				PRODUCT_NAME = Pods_SimpleCustomizableTextView_Tests;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
-		};
-		F15822AC021DCA6CDF8507ECE4A640E2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A45B03DD3F2D7B2B1B8BA37D99CC9C98 /* Pods-SimpleCustomizableTextView_Example.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-SimpleCustomizableTextView_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SimpleCustomizableTextView_Example/Pods-SimpleCustomizableTextView_Example.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_SimpleCustomizableTextView_Example;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		F86A76FDC2F359403A1AEEA5017F0297 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A40F25A36640AFCED211803D710B55B7 /* Pods-SimpleCustomizableTextView_Example.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-SimpleCustomizableTextView_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SimpleCustomizableTextView_Example/Pods-SimpleCustomizableTextView_Example.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_SimpleCustomizableTextView_Example;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
@@ -675,8 +681,8 @@
 		2FF25CA7A62C1FAF1F0AD43CE9ABF9BB /* Build configuration list for PBXNativeTarget "SimpleCustomizableTextView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9743FB6C4C77B5E138520BFE45AC96FD /* Debug */,
-				93A24C3486128B5180F4FD79974E9900 /* Release */,
+				E6318F5EB2497747A61CFFD7485B6F31 /* Debug */,
+				BCF1B03B02597BC5F6B8524C6153DFE8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -684,8 +690,8 @@
 		68C47655453BEA73DA85528283A94403 /* Build configuration list for PBXNativeTarget "Pods-SimpleCustomizableTextView_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C2A1607531CF0D08E1D60290404F171E /* Debug */,
-				DC3D1D3FCCF4B696695BB5A866C3C70E /* Release */,
+				322E8FAE6095169FA29A20E81F2EA1E4 /* Debug */,
+				EF18252474D3C29874277C59E8021BAD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -693,8 +699,8 @@
 		9DCDE26B3C763D616AFA067F8E11C5C5 /* Build configuration list for PBXNativeTarget "Pods-SimpleCustomizableTextView_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F86A76FDC2F359403A1AEEA5017F0297 /* Debug */,
-				F15822AC021DCA6CDF8507ECE4A640E2 /* Release */,
+				29DBEB1A1D707170FA85C6122EF250E2 /* Debug */,
+				4769F1B39B89EDC5702E3580172D2C26 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
