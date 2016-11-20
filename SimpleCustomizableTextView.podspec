@@ -18,7 +18,17 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+
+                        SimpleCustomizableTextView is a simple customizable UITextView subclass, written in Swift.
+
+                        * Placeholder similar to UITextField
+                        * AccessryView on keyboard
+                        * Closing keyboard
+                        * Support @IBDesignable and @IBInspectable
+                        * Support Swift 3.0
+                        * Compatible with Carthage
+
+
                        DESC
 
   s.homepage         = 'https://github.com/Kyohei-Sakai/SimpleCustomizableTextView'
