@@ -169,8 +169,7 @@ private extension SimpleCustomizableTextView {
     }
     
     func configurePlaceholder() {
-//        placeholderLabel.backgroundColor = UIColor.clear
-        placeholderLabel.backgroundColor = UIColor.red.withAlphaComponent(0.5)
+        placeholderLabel.backgroundColor = UIColor.clear
         placeholderLabel.textColor = UIColor.gray.withAlphaComponent(0.7)
         placeholderLabel.numberOfLines = 0
         placeholderLabel.lineBreakMode = .byWordWrapping
