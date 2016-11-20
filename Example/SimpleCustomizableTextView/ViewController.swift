@@ -13,6 +13,14 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var textView: SimpleCustomizableTextView!
     
+    @IBOutlet weak var sizeSlider: UISlider!
+    @IBOutlet weak var edgeInsetsButton: UIButton!
+    @IBOutlet weak var topInset: UITextField!
+    @IBOutlet weak var leftInset: UITextField!
+    @IBOutlet weak var bottomInset: UITextField!
+    @IBOutlet weak var rightInset: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -20,21 +28,41 @@ class ViewController: UIViewController {
         textView.layer.borderWidth = 1
         textView.keyboardAppearance = .dark
         
-        // MARK: - Placeholder setting -
-        
-        textView.placeholder = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."
-        textView.customDelegate = self
-        
-        // MARK: - AccessaryView setting -
+        // AccessaryView setting
         
         textView.accessoryViewStyle = .blackOpaque
         textView.barItemTitle = "Close"
         textView.barItemTitleColor = UIColor.white
         textView.barItemTitleFont = UIFont.italicSystemFont(ofSize: 20)
         
+        textView.customDelegate = self
+        
         view.addSubview(textView)
         
     }
+    
+    @IBAction func sizeChanged(_ sender: UISlider) {
+        textView.font = .systemFont(ofSize: CGFloat(sizeSlider.value))
+    }
+    
+    @IBAction func setEdgeInsets(_ sender: UIButton) {
+        if let text = topInset.text, let top = Int(text) {
+            textView.textContainerInset.top = CGFloat(top)
+        }
+        
+        if let text = leftInset.text, let left = Int(text) {
+            textView.textContainerInset.left = CGFloat(left)
+        }
+        
+        if let text = bottomInset.text, let bottom = Int(text) {
+            textView.textContainerInset.bottom = CGFloat(bottom)
+        }
+        
+        if let text = rightInset.text, let right = Int(text) {
+            textView.textContainerInset.right = CGFloat(right)
+        }
+    }
+    
 }
 
 
@@ -42,6 +70,7 @@ class ViewController: UIViewController {
 
 extension ViewController: SimpleCustomizableTextViewDelegate {
     public func SimpleCustomizableTextViewShouldDone(_ textView: SimpleCustomizableTextView) -> Bool {
+        // do something
         return true
     }
 }
