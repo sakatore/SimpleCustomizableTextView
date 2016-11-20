@@ -54,6 +54,12 @@ public class SimpleCustomizableTextView: UITextView {
     
     // MARK: - override properties -
     
+    override public var frame: CGRect {
+        didSet {
+            adjustLabelToFit()
+        }
+    }
+    
     override public var text: String! {
         didSet {
             placeholderIsHidden()
@@ -76,6 +82,15 @@ public class SimpleCustomizableTextView: UITextView {
     override public var textContainerInset: UIEdgeInsets {
         didSet {
             placeholderLabel.frame.origin = CGPoint(x: textContainerInset.left + paddingLeft, y: textContainerInset.top)
+            
+            if oldValue.left != textContainerInset.left {
+                placeholderLabel.frame.size.width = placeholderLabel.frame.width + oldValue.left - textContainerInset.left
+            }
+            
+            if oldValue.right != textContainerInset.right {
+                placeholderLabel.frame.size.width = placeholderLabel.frame.width + oldValue.right - textContainerInset.right
+            }
+            
         }
     }
     
@@ -154,7 +169,8 @@ private extension SimpleCustomizableTextView {
     }
     
     func configurePlaceholder() {
-        placeholderLabel.backgroundColor = UIColor.clear
+//        placeholderLabel.backgroundColor = UIColor.clear
+        placeholderLabel.backgroundColor = UIColor.red.withAlphaComponent(0.5)
         placeholderLabel.textColor = UIColor.gray.withAlphaComponent(0.7)
         placeholderLabel.numberOfLines = 0
         placeholderLabel.lineBreakMode = .byWordWrapping
@@ -162,6 +178,7 @@ private extension SimpleCustomizableTextView {
         placeholderLabel.font = font ?? .systemFont(ofSize: 12)
         placeholderLabel.textAlignment = textAlignment
         placeholderLabel.frame.origin = CGPoint(x: textContainerInset.left + paddingLeft, y: textContainerInset.top)
+        placeholderIsHidden()
         
         self.addSubview(placeholderLabel)
     }
