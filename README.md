@@ -112,6 +112,14 @@ it, simply add the following line to your Podfile:
 pod "SimpleCustomizableTextView"
 ```
 
+### Carthage
+
+Add the following line to your `Cartfile`:
+
+```ruby
+github "Kyohei-Sakai/SimpleCustomizableTextView"
+```
+
 ## Author
 
 Kyohei-Sakai, nico_f00tb@yahoo.co.jp
